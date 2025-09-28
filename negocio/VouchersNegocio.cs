@@ -8,7 +8,7 @@ using dominio;
 
 namespace negocio
 {
-    internal class VouchersNegocio
+    public class VouchersNegocio
     {
         public List<Voucher> listar()
         {
@@ -87,20 +87,20 @@ namespace negocio
             }
         }
 
-        public string validarVoucher(string codigoVoucher)
+        public bool validarVoucher(string codigoVoucher)
         {
             Voucher voucher = obtenerVoucher(codigoVoucher);
             if (voucher == null)
             {
-                return "El código de voucher ingresado no existe.";
+                return false;
             }
             else if (voucher.IdCliente != 0 || voucher.IdArticulo != 0)
             {
-                return "El código de voucher ya fue utilizado.";
+                return false;
             }
             else
             {
-                return "Código de voucher válido";
+                return true;
             }
 
         }

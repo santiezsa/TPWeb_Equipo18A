@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="IngresarVoucher.aspx.cs" Inherits="TPWeb_equipo_18A.IngresarVoucher" %>
+﻿<%@ Page Title="Ingresar voucher" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="IngresarVoucher.aspx.cs" Inherits="TPWeb_equipo_18A.IngresarVoucher" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container py-5">
         <div class="row justify-content-center">

@@ -68,7 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="IngresarVoucher.aspx" />
+    <Content Include="Script\jquery-3.7.1.min.js" />
+    <Content Include="SeleccionPremio.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +81,9 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IngresarVoucher.aspx.cs">
       <DependentUpon>IngresarVoucher.aspx</DependentUpon>
@@ -93,6 +99,13 @@
     </Compile>
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionPremio.aspx.cs">
+      <DependentUpon>SeleccionPremio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionPremio.aspx.designer.cs">
+      <DependentUpon>SeleccionPremio.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -118,7 +131,6 @@
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="Resources\" />
-    <Folder Include="Script\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
