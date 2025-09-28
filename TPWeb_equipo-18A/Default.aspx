@@ -2,46 +2,42 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Hola mundo</h1>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+    <div class="hero-section">
+        <div class="container">
+            <h1>¡Bienvenido!</h1>
+            <p>Participa en nuestro sorteo y gana premios increíbles.</p>
+            <a class="btn-hero" href="IngresarVoucher.aspx">Participar</a>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎫</div>
+                        <h3>Voucher de compra</h3>
+                        <p>Podes obtener tu voucher con cada compra realizada en nuestro establecimiento.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3>Premios increíbles</h3>
+                        <p>Selecciona entre una gran variedad de premios.</p>
+                    </div>
+                </div>
+                <div class ="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Fácil de participar</h3>
+                        <p>Registrate fácilmente y participá en el sorteo de grandiosos premios</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-    <footer>
-        <hr />footer
-    </footer>
+    </div>
 </asp:Content>

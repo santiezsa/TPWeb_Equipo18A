@@ -7,16 +7,17 @@ using System.Web.UI.WebControls;
 
 namespace TPWeb_equipo_18A
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class IngresarVoucher : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnVoucher_Click(object sender, ImageClickEventArgs e)
+        protected void btnValidar_Click(object sender, EventArgs e)
         {
-
+            //
+            return;
         }
     }
 }
