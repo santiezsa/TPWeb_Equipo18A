@@ -15,6 +15,15 @@ namespace TPWeb_equipo_18A
     {
 
         /// <summary>
+        /// Control ltlError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlError;
+
+        /// <summary>
         /// Control ValidationSummary1.
         /// </summary>
         /// <remarks>

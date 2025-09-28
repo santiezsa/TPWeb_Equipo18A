@@ -32,12 +32,12 @@ namespace TPWeb_equipo_18A
             {
                 // Lo paso por Session
                 Session["voucherCodigo"] = codigo;
-                Response.Redirect("SeleccionPremio.aspx", false);
                 // Pagina de seleccion de premio
+                Response.Redirect("SeleccionPremio.aspx", false);
             }
             else
             {
-                // Pagina de error
+                ltlError.Text = "<div class='alert alert-danger'>El código es inválido o ya fue utilizado.</div>";
             }
 
 

@@ -9,6 +9,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h3 class="card-title mb-3">Ingresa tu código de voucher</h3>
+                        <asp:Literal ID="ltlError" runat="server"></asp:Literal>
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" />
                         <div class="mb-3">
                             <label for="txtCodigo" class="form-label">Código alfanumérico</label>

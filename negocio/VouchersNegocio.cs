@@ -111,10 +111,10 @@ namespace negocio
             try
             {
                 datos.setearConsulta("UPDATE Vouchers SET FechaCanje = @FechaCanje, IdCliente = @IdCliente, IdArticulo = @IdArticulo WHERE CodigoVoucher = @CodigoVoucher");
-                datos.setearParametro("@fechaCanje", fechaCanje);
-                datos.setearParametro("@idCliente", idCliente);
-                datos.setearParametro("idArticulo", idArticulo);
-                datos.setearParametro("@codigoVoucher", codigoVoucher);
+                datos.setearParametro("@FechaCanje", fechaCanje);
+                datos.setearParametro("@IdCliente", idCliente);
+                datos.setearParametro("IdArticulo", idArticulo);
+                datos.setearParametro("@CodigoVoucher", codigoVoucher);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
