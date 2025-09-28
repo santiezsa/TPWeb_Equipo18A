@@ -20,7 +20,7 @@ namespace negocio
                 datos.setearConsulta("SELECT CodigoVoucher, FECHACANJE, IDCLIENTE, IDARTICULO FROM Vouchers");
                 datos.ejecutarLectura();
 
-                while(datos.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     Voucher voucher = new Voucher();
                     voucher.CodigoVoucher = (string)datos.Lector["CodigoVoucher"];
@@ -38,6 +38,45 @@ namespace negocio
                 }
                 return lista;
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public Voucher obtenerVoucher(string codigoVoucher)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT CodigoVoucher, FechaCanje, IdCliente, IdArticulo FROM Vouchers WHERE CodigoVoucher = @codigo");
+                datos.setearParametro("@codigo", codigoVoucher);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    Voucher voucher = new Voucher();
+                    voucher.CodigoVoucher = (string)datos.Lector["CodigoVoucher"];
+
+                    if (!(datos.Lector["FechaCanje"] is DBNull))
+                    {
+                        voucher.FechaCanje = (DateTime)datos.Lector["FechaCanje"];
+                    }
+                    if (!(datos.Lector["IdCliente"] is DBNull))
+                    {
+                        voucher.IdCliente = (int)datos.Lector["IdCliente"];
+                    }
+                    if (!(datos.Lector["IdArticulo"] is DBNull))
+                    {
+                        voucher.IdArticulo = (int)datos.Lector["IdArticulo"];
+                    }
+                    return voucher;
+                }
+                return null; // Cuando no encuentre el voucher
+            }
             catch(Exception ex)
             {
                 throw ex;
@@ -46,28 +85,23 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-
-
         }
 
         public string validarVoucher(string codigoVoucher)
         {
-            List<Voucher> lista = listar();
-            foreach(Voucher voucher in lista)
+            Voucher voucher = obtenerVoucher(codigoVoucher);
+            if (voucher == null)
             {
-                if(voucher.CodigoVoucher == codigoVoucher)
-                {
-                    if(voucher.IdCliente == 0 && voucher.IdArticulo == 0)
-                    {
-                        return "Codigo de voucher válido.";
-                    }
-                    else
-                    {
-                        return "El código de voucher ya fue utilizado.";
-                    }
-                }
+                return "El código de voucher ingresado no existe.";
             }
-            return "Código de voucher invalido";
+            else if (voucher.IdCliente != 0 || voucher.IdArticulo != 0)
+            {
+                return "El código de voucher ya fue utilizado.";
+            }
+            else
+            {
+                return "Código de voucher válido";
+            }
 
         }
 
@@ -83,7 +117,7 @@ namespace negocio
                 datos.setearParametro("@codigoVoucher", codigoVoucher);
                 datos.ejecutarAccion();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
