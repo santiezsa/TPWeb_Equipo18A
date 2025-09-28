@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ingresar voucher" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="IngresarVoucher.aspx.cs" Inherits="TPWeb_equipo_18A.IngresarVoucher" %>
+﻿<%@ Page Title="Ingreso de voucher" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="IngresarVoucher.aspx.cs" Inherits="TPWeb_equipo_18A.IngresarVoucher" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 

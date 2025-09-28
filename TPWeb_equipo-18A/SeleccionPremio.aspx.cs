@@ -55,7 +55,7 @@ namespace TPWeb_equipo_18A
 
         protected void repeaterPrizes_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName == "SelectPrize")
+            if (e.CommandName == "SelectPrize") // comando del boton en el aspx
             {
                 // ID del art
                 int idArticulo = Convert.ToInt32(e.CommandArgument);

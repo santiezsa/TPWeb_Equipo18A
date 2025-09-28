@@ -70,6 +70,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="IngresarVoucher.aspx" />
+    <Content Include="Registro.aspx" />
     <Content Include="Script\jquery-3.7.1.min.js" />
     <Content Include="SeleccionPremio.aspx" />
     <Content Include="Web.config" />
@@ -99,6 +100,13 @@
     </Compile>
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
     <Compile Include="SeleccionPremio.aspx.cs">
       <DependentUpon>SeleccionPremio.aspx</DependentUpon>
