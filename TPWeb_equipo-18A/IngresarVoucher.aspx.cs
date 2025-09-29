@@ -30,17 +30,20 @@ namespace TPWeb_equipo_18A
             bool disponible = vouchersNegocio.validarVoucher(codigo);
             if(disponible)
             {
-                // Lo paso por Session
                 Session["voucherCodigo"] = codigo;
-                // Pagina de seleccion de premio
                 Response.Redirect("SeleccionPremio.aspx", false);
             }
             else
             {
-                ltlError.Text = "<div class='alert alert-danger'>El código es inválido o ya fue utilizado.</div>";
+                cvVoucherInvalido.IsValid = false;
             }
 
 
+        }
+
+        protected void cvVoucherInvalido_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = true;
         }
     }
 }

@@ -34,9 +34,6 @@
                 <!-- Card del formulario -->
                 <div class="card shadow-lg border-0 card-hover">
                     <div class="card-body p-4 p-md-5">
-                        <asp:Literal ID="ltlError" runat="server"></asp:Literal>
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger mb-4" />
-
                         <div class="mb-4">
                             <label class="form-label fw-bold fs-5">Código del voucher</label>
                             <div class="input-group input-group-lg">
@@ -55,6 +52,14 @@
                                 ErrorMessage="El código es obligatorio"
                                 Display="Dynamic">
                             </asp:RequiredFieldValidator>
+
+                            <asp:CustomValidator ID="cvVoucherInvalido" runat="server"
+                                ControlToValidate="txtCodigo"
+                                CssClass="text-danger small mt-2"
+                                ErrorMessage="El codigo es invalido o ya fue utilizado"
+                                Display="Dynamic"
+                                OnServerValidate="cvVoucherInvalido_ServerValidate">
+                            </asp:CustomValidator>
                         </div>
 
                         <asp:Button ID="btnValidar" runat="server"
