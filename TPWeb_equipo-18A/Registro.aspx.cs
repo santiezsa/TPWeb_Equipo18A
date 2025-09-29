@@ -12,7 +12,7 @@ namespace TPWeb_equipo_18A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtId.Enabled = false;
         }
 
         protected void btnParticipar_Click(object sender, EventArgs e)

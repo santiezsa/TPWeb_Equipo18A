@@ -4,7 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
+    <div class="container">
         <div class="col-6">
             <div class="mb-3">
                 <label for="txtId" class="form-label">Id</label>
