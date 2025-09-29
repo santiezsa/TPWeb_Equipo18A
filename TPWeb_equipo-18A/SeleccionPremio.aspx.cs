@@ -57,14 +57,28 @@ namespace TPWeb_equipo_18A
         {
             if (e.CommandName == "SelectPrize") // comando del boton en el aspx
             {
-                // ID del art
-                int idArticulo = Convert.ToInt32(e.CommandArgument);
+                try
+                {
+                    // ID del art
+                    int idArticulo = Convert.ToInt32(e.CommandArgument);
 
-                // Guardo el ID del art en la sesion
-                Session["idArticulo"] = idArticulo;
+                    // Valido el voucher presente en la sesion
+                    if (Session["voucherCodigo"] == null)
+                    {
+                        Response.Redirect("IngresarVoucher.aspx", false);
+                        return;
+                    }
 
-                // Redirect a pagina de registro
-                //Response.Redirect("Registro.aspx", false);
+                    // Guardo el ID del art en la sesion
+                    Session["idArticulo"] = idArticulo;
+
+                    // Redirect a pagina de registro
+                    Response.Redirect("Registro.aspx", false);
+                }
+                catch(Exception ex)
+                {
+                    //Response.Redirect("Error.aspx", false);
+                }
             }
         }
 

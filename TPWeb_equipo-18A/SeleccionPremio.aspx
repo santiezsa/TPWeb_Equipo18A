@@ -2,75 +2,57 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
+        .prize-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
         .prize-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s ease;
         }
-        .prize-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-        }
+
+            .prize-card:hover {
+                transform: translateY(-5px);
+            }
+
         .carousel-image {
             height: 250px;
-            object-fit: contain; 
-            width: 100%;
+            object-fit: contain;
             background-color: #f8f9fa;
             padding: 10px;
         }
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .btn-container {
-            margin-top: auto;
-            padding-top: 15px;
-        }
+
         .carousel-control-prev,
         .carousel-control-next {
-            position: absolute;
-            z-index: 1;
             background-color: rgba(255,255,255,0.7);
             width: 40px;
             height: 40px;
             top: 50% !important;
-            bottom: auto !important;
             transform: translateY(-50%) !important;
             border-radius: 50%;
-            border: 1px solid #ddd;
-            opacity: 1;
         }
 
-        .carousel-control-prev {
-            left: 10px;
-        }
-
-        .carousel-control-next {
-            right: 10px;
-        }
-
-        /* Flechitas en negro */
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             filter: invert(1);
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Efecto hover */
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            background-color: rgba(255,255,255,0.9);
         }
     </style>
+
+
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container py-5">
-        <h1 class="text-center mb-4">Selecciona tu premio</h1>
+        <!-- Header con gradiente -->
+        <div class="prize-gradient text-white rounded-3 p-4 text-center mb-5">
+            <h1 class="display-5 fw-bold mb-3">Selecciona tu premio</h1>
+            <p class="mb-0 fs-5 opacity-75">Elige entre estos increíbles premios</p>
+        </div>
+
         <div class="row g-4">
             <asp:Repeater ID="repeaterPrizes" runat="server" OnItemCommand="repeaterPrizes_ItemCommand" OnItemDataBound="repeaterPrizes_ItemDataBound">
                 <ItemTemplate>
                     <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm prize-card">
+                        <div class="card h-100 shadow-sm border-0 prize-card">
                             <!-- Carousel de imágenes -->
                             <div id="carouselImages_<%# Eval("Id") %>" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
@@ -95,12 +77,12 @@
                             </div>
 
                             <!-- Contenido de la card -->
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold"><%# Eval("Nombre") %></h5>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark"><%# Eval("Nombre") %></h5>
                                 <p class="card-text text-muted flex-grow-1"><%# Eval("Descripcion") %></p>
-                                <div class="btn-container">
+                                <div class="mt-auto pt-3">
                                     <asp:Button ID="btnSelectPrize" runat="server" Text="Seleccionar Premio"
-                                        CssClass="btn btn-primary w-100"
+                                        CssClass="btn btn-primary w-100 fw-semibold"
                                         CommandName="SelectPrize"
                                         CommandArgument='<%# Eval("Id") %>' />
                                 </div>
