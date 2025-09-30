@@ -34,15 +34,38 @@ namespace TPWeb_equipo_18A
             if(existe == true)
             {
                 txtDocumento.CssClass = "form-control is-valid";
-                lblValidacion.Text = "Documento válido";
+                lblValidacion.Text = "Documento existente";
                 lblValidacion.CssClass = "valid-feedback d-block";
-                // TODO: autocompletar los campos
+                
+                // Autocompleto campos 
+                txtId.Text = cliente.ID.ToString();
+                txtNombre.Text = cliente.Nombre;
+                txtApellido.Text = cliente.Apellido;
+                //txtEmail.Text = cliente.Email; --> FIX
+                txtDireccion.Text = cliente.Direccion;
+                txtCiudad.Text = cliente.Ciudad;
+                txtCp.Text = cliente.CP.ToString();
             } else
             {
-                txtDocumento.CssClass = "form-control is-invalid";
-                lblValidacion.Text = "Documento no registrado";
-                lblValidacion.CssClass = "invalid-feedback d-block";
+                txtDocumento.CssClass = "form-control is-valid";
+                lblValidacion.Text = "Nuevo documento";
+                lblValidacion.CssClass = "valid-feedback d-block";
+
+                LimpiarCampos(mantenerDni: true);
             }
+        }
+
+        private void LimpiarCampos(bool mantenerDni)
+        {
+            if (!mantenerDni) txtDocumento.Text = "";
+
+            txtId.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            //txtEmail.Text = ""; --> FIX
+            txtDireccion.Text = "";
+            txtCiudad.Text = "";
+            txtCp.Text = "";
         }
     }
 }

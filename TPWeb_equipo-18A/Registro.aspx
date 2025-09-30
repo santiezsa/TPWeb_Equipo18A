@@ -5,6 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
+        <h2>Carga tus datos</h2>
         <div class="col-6">
             <div class="mb-3">
                 <label for="txtId" class="form-label">Id</label>
