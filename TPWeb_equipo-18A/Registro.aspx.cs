@@ -29,18 +29,20 @@ namespace TPWeb_equipo_18A
             string dni = txtDocumento.Text.Trim(); // Obtengo dni del lbl
             cliente = clienteNegocio.ObtenerPorDni(dni); //Busco en la db por DNI
 
-
             bool existe = cliente != null && cliente.Documento == dni ? true : false;
 
             if(existe == true)
             {
-                lblValidacion.Text = "Valida ok"; 
+                txtDocumento.CssClass = "form-control is-valid";
+                lblValidacion.Text = "Documento válido";
+                lblValidacion.CssClass = "valid-feedback d-block";
                 // TODO: autocompletar los campos
             } else
             {
-                lblValidacion.Text = "Documento invalido";
+                txtDocumento.CssClass = "form-control is-invalid";
+                lblValidacion.Text = "Documento no registrado";
+                lblValidacion.CssClass = "invalid-feedback d-block";
             }
-                
         }
     }
 }

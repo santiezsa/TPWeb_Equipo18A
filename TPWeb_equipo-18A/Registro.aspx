@@ -13,7 +13,7 @@
             <div class="mb-3">
                 <label for="txtDocumento" class="form-label">Documento</label>
                 <asp:TextBox runat="server" ID="txtDocumento" AutoPostBack="true" CssClass="form-control" OnTextChanged="txtDocumento_TextChanged" />
-                <asp:Label Text="" ID="lblValidacion" runat="server"></asp:Label>
+                <asp:Label Text="" ID="lblValidacion" runat="server" CssClass="valid-feedback"></asp:Label>
             </div>
             <div class="mb-3">
                 <label for="txtNombre" class="form-label">Nombre</label>
