@@ -34,7 +34,7 @@ namespace TPWeb_equipo_18A
             if(existe == true)
             {
                 txtDocumento.CssClass = "form-control is-valid";
-                lblValidacion.Text = "Documento existente";
+                lblValidacion.Text = "Documento existente.";
                 lblValidacion.CssClass = "valid-feedback d-block";
                 
                 // Autocompleto campos 
@@ -48,7 +48,7 @@ namespace TPWeb_equipo_18A
             } else
             {
                 txtDocumento.CssClass = "form-control is-valid";
-                lblValidacion.Text = "Nuevo documento";
+                lblValidacion.Text = "Nuevo documento, completá los datos para dar de alta.";
                 lblValidacion.CssClass = "valid-feedback d-block";
 
                 LimpiarCampos(mantenerDni: true);
