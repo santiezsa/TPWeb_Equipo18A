@@ -33,6 +33,15 @@ namespace TPWeb_equipo_18A
         protected global::System.Web.UI.WebControls.TextBox txtDocumento;
 
         /// <summary>
+        /// Control lblValidacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValidacion;
+
+        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>

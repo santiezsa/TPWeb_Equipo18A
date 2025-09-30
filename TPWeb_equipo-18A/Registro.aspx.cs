@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using dominio;
+using negocio;
 
 namespace TPWeb_equipo_18A
 {
@@ -18,6 +19,28 @@ namespace TPWeb_equipo_18A
         protected void btnParticipar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void txtDocumento_TextChanged(object sender, EventArgs e)
+        {
+            ClientesNegocio clienteNegocio = new ClientesNegocio();
+            Cliente cliente = new Cliente();
+
+            string dni = txtDocumento.Text.Trim(); // Obtengo dni del lbl
+            cliente = clienteNegocio.ObtenerPorDni(dni); //Busco en la db por DNI
+
+
+            bool existe = cliente != null && cliente.Documento == dni ? true : false;
+
+            if(existe == true)
+            {
+                lblValidacion.Text = "Valida ok"; 
+                // TODO: autocompletar los campos
+            } else
+            {
+                lblValidacion.Text = "Documento invalido";
+            }
+                
         }
     }
 }
