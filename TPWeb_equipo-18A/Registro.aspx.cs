@@ -18,7 +18,32 @@ namespace TPWeb_equipo_18A
 
         protected void btnParticipar_Click(object sender, EventArgs e)
         {
+            ClientesNegocio clienteNegocio = new ClientesNegocio();
+            Cliente cliente = new Cliente();
+          
+            string dni = txtDocumento.Text.Trim();
+            Cliente existente = clienteNegocio.ObtenerPorDni(dni);
 
+            // Armo el objeto Cliente con lo que hay en los textbox
+            //cliente.ID = int.Parse(txtId.Text);  ------------------------- TODO: Pensar si hace falta tener en cuenta el ID o no ya que lo genera la DB
+            cliente.Documento = txtDocumento.Text.Trim();
+            cliente.Nombre = txtNombre.Text.Trim();
+            cliente.Apellido = txtApellido.Text.Trim();
+            cliente.Email = txtEmail.Text.Trim();
+            cliente.Direccion = txtDireccion.Text.Trim();
+            cliente.Ciudad = txtCiudad.Text.Trim();
+            //cliente.CP = int.Parse(txtCp.Text); ---------------------------- TODO: Verificar porque se esta rompiendo 
+
+            if (existente != null)
+            {
+                clienteNegocio.actualizar(cliente);
+                LimpiarCampos(mantenerDni: false);
+            }
+            else
+            {
+                clienteNegocio.agregar(cliente);
+                LimpiarCampos(mantenerDni: false);
+            }
         }
 
         protected void txtDocumento_TextChanged(object sender, EventArgs e)
@@ -31,12 +56,12 @@ namespace TPWeb_equipo_18A
 
             bool existe = cliente != null && cliente.Documento == dni ? true : false;
 
-            if(existe == true)
+            if (existe == true)
             {
                 txtDocumento.CssClass = "form-control is-valid";
                 lblValidacion.Text = "Documento existente.";
                 lblValidacion.CssClass = "valid-feedback d-block";
-                
+
                 // Autocompleto campos 
                 txtId.Text = cliente.ID.ToString();
                 txtNombre.Text = cliente.Nombre;
@@ -45,7 +70,8 @@ namespace TPWeb_equipo_18A
                 txtDireccion.Text = cliente.Direccion;
                 txtCiudad.Text = cliente.Ciudad;
                 txtCp.Text = cliente.CP.ToString();
-            } else
+            }
+            else
             {
                 txtDocumento.CssClass = "form-control is-valid";
                 lblValidacion.Text = "Nuevo documento, completá los datos para dar de alta.";

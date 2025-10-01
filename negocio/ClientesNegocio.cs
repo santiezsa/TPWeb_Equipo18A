@@ -120,7 +120,7 @@ namespace negocio
                 datos.setearParametro("@Direccion", cliente.Direccion);
                 datos.setearParametro("@Ciudad", cliente.Ciudad);
                 datos.setearParametro("@CP", cliente.CP);
-
+                datos.setearParametro("@Id", cliente.ID);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
