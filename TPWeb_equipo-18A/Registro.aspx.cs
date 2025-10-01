@@ -41,7 +41,7 @@ namespace TPWeb_equipo_18A
                 txtId.Text = cliente.ID.ToString();
                 txtNombre.Text = cliente.Nombre;
                 txtApellido.Text = cliente.Apellido;
-                //txtEmail.Text = cliente.Email; --> FIX
+                txtEmail.Text = cliente.Email;
                 txtDireccion.Text = cliente.Direccion;
                 txtCiudad.Text = cliente.Ciudad;
                 txtCp.Text = cliente.CP.ToString();
@@ -62,7 +62,7 @@ namespace TPWeb_equipo_18A
             txtId.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
-            //txtEmail.Text = ""; --> FIX
+            txtEmail.Text = "";
             txtDireccion.Text = "";
             txtCiudad.Text = "";
             txtCp.Text = "";

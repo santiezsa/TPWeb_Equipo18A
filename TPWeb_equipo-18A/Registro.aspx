@@ -16,10 +16,10 @@
             <h1 class="display-5 fw-bold mb-3">Carga tus datos</h1>
         </div>
         <div class="col-6">
-            <div class="mb-3">
+            <!--<div class="mb-3">
                 <label for="txtId" class="form-label">Id</label>
                 <asp:TextBox runat="server" ID="txtId" CssClass="form-control" />
-            </div>
+            </div>-->
             <div class="mb-3">
                 <label for="txtDocumento" class="form-label">Documento</label>
                 <asp:TextBox runat="server" ID="txtDocumento" AutoPostBack="true" CssClass="form-control" OnTextChanged="txtDocumento_TextChanged" />
@@ -35,7 +35,7 @@
             </div>
             <div class="mb-3">
                 <label for="txtEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp">
+                <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" TextMode="Email" />
                 <div id="emailHelp" class="form-text">No compartiremos tu e-mail con nadie.</div>
             </div>
             <div class="mb-3">
