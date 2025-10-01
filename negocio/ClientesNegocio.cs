@@ -19,7 +19,7 @@ namespace negocio
             {
                 datos.setearConsulta("SELECT C.Id, C.Documento, C.Nombre, C.Apellido, C.Email, C.Direccion, C.Ciudad, C.CP FROM Clientes C");
                 datos.ejecutarLectura();
-                while(datos.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     Cliente aux = new Cliente();
                     aux.ID = (int)datos.Lector["Id"];
@@ -35,7 +35,7 @@ namespace negocio
                 }
                 return lista;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -95,6 +95,32 @@ namespace negocio
                 datos.setearParametro("@Direccion", nuevo.Direccion);
                 datos.setearParametro("@Ciudad", nuevo.Ciudad);
                 datos.setearParametro("@CP", nuevo.CP);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void actualizar(Cliente cliente)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE Clientes SET Nombre = @Nombre, Apellido = @Apellido, Email = @Email, Direccion = @Direccion, Ciudad = @Ciudad, CP = @CP WHERE Id = @Id");
+                datos.setearParametro("@Nombre", cliente.Nombre);
+                datos.setearParametro("@Apellido", cliente.Apellido);
+                datos.setearParametro("@Email", cliente.Email);
+                datos.setearParametro("@Direccion", cliente.Direccion);
+                datos.setearParametro("@Ciudad", cliente.Ciudad);
+                datos.setearParametro("@CP", cliente.CP);
+
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
