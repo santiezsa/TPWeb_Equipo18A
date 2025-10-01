@@ -1,10 +1,20 @@
 ﻿<%@ Page Title="Registrá tus datos" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="TPWeb_equipo_18A.Registro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .prize-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
 </asp:Content>
 
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="container py-5">
+        <!-- Header con gradiente -->
+        <div class="prize-gradient text-white rounded-3 p-4 text-center mb-5">
+            <h1 class="display-5 fw-bold mb-3">Carga tus datos</h1>
+        </div>
         <div class="col-6">
             <div class="mb-3">
                 <label for="txtId" class="form-label">Id</label>
@@ -12,7 +22,8 @@
             </div>
             <div class="mb-3">
                 <label for="txtDocumento" class="form-label">Documento</label>
-                <asp:TextBox runat="server" ID="txtDocumento" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txtDocumento" AutoPostBack="true" CssClass="form-control" OnTextChanged="txtDocumento_TextChanged" />
+                <asp:Label Text="" ID="lblValidacion" runat="server" CssClass="valid-feedback"></asp:Label>
             </div>
             <div class="mb-3">
                 <label for="txtNombre" class="form-label">Nombre</label>
