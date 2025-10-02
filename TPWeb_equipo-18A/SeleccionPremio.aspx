@@ -92,5 +92,11 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+        <div class="text-center mt-4">
+            <a href="Default.aspx" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver al inicio
+            </a>
+        </div>
     </div>
 </asp:Content>
