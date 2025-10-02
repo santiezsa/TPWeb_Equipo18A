@@ -13,11 +13,17 @@ namespace TPWeb_equipo_18A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtId.Enabled = false;
+            //txtId.Enabled = false;
         }
 
         protected void btnParticipar_Click(object sender, EventArgs e)
         {
+            // Verifica que la pagina sea valida
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             ClientesNegocio clienteNegocio = new ClientesNegocio();
             Cliente cliente = new Cliente();
           
@@ -25,14 +31,14 @@ namespace TPWeb_equipo_18A
             Cliente existente = clienteNegocio.ObtenerPorDni(dni);
 
             // Armo el objeto Cliente con lo que hay en los textbox
-            //cliente.ID = int.Parse(txtId.Text);  ------------------------- TODO: Pensar si hace falta tener en cuenta el ID o no ya que lo genera la DB
             cliente.Documento = txtDocumento.Text.Trim();
             cliente.Nombre = txtNombre.Text.Trim();
             cliente.Apellido = txtApellido.Text.Trim();
             cliente.Email = txtEmail.Text.Trim();
             cliente.Direccion = txtDireccion.Text.Trim();
             cliente.Ciudad = txtCiudad.Text.Trim();
-            //cliente.CP = int.Parse(txtCp.Text); ---------------------------- TODO: Verificar porque se esta rompiendo 
+            cliente.CP = int.Parse(txtCp.Text.Trim());
+
 
             if (existente != null)
             {
@@ -63,7 +69,7 @@ namespace TPWeb_equipo_18A
                 lblValidacion.CssClass = "valid-feedback d-block";
 
                 // Autocompleto campos 
-                txtId.Text = cliente.ID.ToString();
+                //txtId.Text = cliente.ID.ToString();
                 txtNombre.Text = cliente.Nombre;
                 txtApellido.Text = cliente.Apellido;
                 txtEmail.Text = cliente.Email;
@@ -85,7 +91,7 @@ namespace TPWeb_equipo_18A
         {
             if (!mantenerDni) txtDocumento.Text = "";
 
-            txtId.Text = "";
+            //txtId.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtEmail.Text = "";
