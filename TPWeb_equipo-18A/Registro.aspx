@@ -149,6 +149,12 @@
             <div class="mb-3">
                 <asp:Button Text="Participar" ID="btnParticipar" CssClass="btn btn-primary" OnClick="btnParticipar_Click" runat="server" />
             </div>
+            <div class="text-center mt-4">
+                <a href="Default.aspx" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>
+                    Volver al inicio
+                </a>
+            </div>
         </div>
     </div>
 </asp:Content>
