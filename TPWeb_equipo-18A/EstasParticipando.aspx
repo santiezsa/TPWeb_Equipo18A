@@ -21,25 +21,25 @@
             text-align: center;
             padding: 20px 30px;
             border-radius: 10px;
-            background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             box-shadow: 0 2px 8px rgba(40,167,69,0.15);
-            color: #28a745;
+            color: #fff;
             text-shadow: 2px 2px 8px #fff, 0 0 10px #28a745;
             letter-spacing: 1px;
             margin-bottom: 30px;
         }
 
-        .mensaje-celebracion h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+            .mensaje-celebracion h1 {
+                font-size: 3rem;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
 
-        .mensaje-celebracion p {
-            font-size: 1.5rem;
-            color: #212529;
-            margin: 0;
-        }
+            .mensaje-celebracion p {
+                font-size: 1.5rem;
+                /*color: #212529;*/
+                margin: 0;
+            }
     </style>
 </asp:Content>
 
@@ -47,7 +47,8 @@
     <div class="container mt-5">
         <div class="mensaje-celebracion">
             <h1>¡FELICIDADES! 🎇</h1>
-            <p>Estás participando por <asp:Label ID="lblPremio" runat="server" /></p>
+            <p>Estás participando por
+                <asp:Label ID="lblPremio" runat="server" /></p>
         </div>
     </div>
 
@@ -80,9 +81,9 @@
         };
     </script>
     <div class="text-center mt-4">
-    <a href="Default.aspx" class="btn btn-outline-secondary">
-        <i class="bi bi-arrow-left me-2"></i>
-        Volver al inicio
-    </a>
-</div>
+        <a href="Default.aspx" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-2"></i>
+            Volver al inicio
+        </a>
+    </div>
 </asp:Content>
