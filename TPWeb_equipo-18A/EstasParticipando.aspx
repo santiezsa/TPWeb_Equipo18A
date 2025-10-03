@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="TPWeb_equipo_18A.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="EstasParticipando.aspx.cs" Inherits="TPWeb_equipo_18A.WebForm1" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
     <!-- Bootstrap CSS -->
@@ -15,16 +15,43 @@
             z-index: 9999;
             pointer-events: none;
         }
+
+        .mensaje-celebracion {
+            font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+            text-align: center;
+            padding: 20px 30px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+            box-shadow: 0 2px 8px rgba(40,167,69,0.15);
+            color: #28a745;
+            text-shadow: 2px 2px 8px #fff, 0 0 10px #28a745;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .mensaje-celebracion h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .mensaje-celebracion p {
+            font-size: 1.5rem;
+            color: #212529;
+            margin: 0;
+        }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container text-center mt-5">
-        <h1 class="display-4 text-success">¡FELICIDADES! 🎇</h1>
-        <p class="lead">Estas participando por @@@@@@@@@@.</p> <!--TODO: TRAER EL PREMIO DESDE LA BASE DE DATOS-->
+    <div class="container mt-5">
+        <div class="mensaje-celebracion">
+            <h1>¡FELICIDADES! 🎇</h1>
+            <p>Estás participando por <asp:Label ID="lblPremio" runat="server" /></p>
+        </div>
     </div>
-    <div id="fireworks-container"></div>
 
+    <div id="fireworks-container"></div>
 
     <script>
         window.onload = function () {
@@ -49,8 +76,6 @@
             });
 
             fireworks.start();
-
-            // Detener después de 10 segundos
             setTimeout(() => fireworks.stop(), 5000);
         };
     </script>

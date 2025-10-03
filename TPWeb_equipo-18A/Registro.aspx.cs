@@ -50,6 +50,7 @@ namespace TPWeb_equipo_18A
                 clienteNegocio.agregar(cliente);
                 LimpiarCampos(mantenerDni: false);
             }
+            Response.Redirect("EstasParticipando.aspx", false);
         }
 
         protected void txtDocumento_TextChanged(object sender, EventArgs e)

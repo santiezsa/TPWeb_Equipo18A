@@ -72,7 +72,7 @@
     <Content Include="Script\jquery-3.7.1.min.js" />
     <Content Include="SeleccionPremio.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="EstasParticipando.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -114,12 +114,12 @@
     <Compile Include="SeleccionPremio.aspx.designer.cs">
       <DependentUpon>SeleccionPremio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="EstasParticipando.aspx.cs">
+      <DependentUpon>EstasParticipando.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="EstasParticipando.aspx.designer.cs">
+      <DependentUpon>EstasParticipando.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
