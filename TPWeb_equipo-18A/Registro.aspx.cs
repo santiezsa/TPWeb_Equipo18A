@@ -13,7 +13,7 @@ namespace TPWeb_equipo_18A
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //txtId.Enabled = false;
+            // txtId.Enabled = false;
         }
 
         protected void btnParticipar_Click(object sender, EventArgs e)
@@ -26,11 +26,16 @@ namespace TPWeb_equipo_18A
 
             ClientesNegocio clienteNegocio = new ClientesNegocio();
             Cliente cliente = new Cliente();
-          
+            VouchersNegocio voucherNegocio = new VouchersNegocio();
+
+            int idArticulo = (int)Session["idArticulo"];
+            string codigoVoucher = Session["voucherCodigo"].ToString();
+
             string dni = txtDocumento.Text.Trim();
             Cliente existente = clienteNegocio.ObtenerPorDni(dni);
 
             // Armo el objeto Cliente con lo que hay en los textbox
+
             cliente.Documento = txtDocumento.Text.Trim();
             cliente.Nombre = txtNombre.Text.Trim();
             cliente.Apellido = txtApellido.Text.Trim();
@@ -39,17 +44,24 @@ namespace TPWeb_equipo_18A
             cliente.Ciudad = txtCiudad.Text.Trim();
             cliente.CP = int.Parse(txtCp.Text.Trim());
 
+            int idCliente = 0;
 
             if (existente != null)
             {
+                cliente.ID = existente.ID;
                 clienteNegocio.actualizar(cliente);
-                LimpiarCampos(mantenerDni: false);
+                idCliente = cliente.ID;
             }
             else
             {
                 clienteNegocio.agregar(cliente);
-                LimpiarCampos(mantenerDni: false);
+                Cliente clienteNuevo = clienteNegocio.ObtenerPorDni(cliente.Documento);
+                idCliente = clienteNuevo.ID;
             }
+
+            voucherNegocio.canjearVoucher(codigoVoucher, DateTime.Now, idCliente, idArticulo);
+            LimpiarCampos(mantenerDni: false);
+
             Response.Redirect("EstasParticipando.aspx", false);
         }
 

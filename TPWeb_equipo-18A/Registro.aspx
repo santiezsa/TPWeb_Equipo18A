@@ -15,7 +15,6 @@
         <div class="prize-gradient text-white rounded-3 p-4 text-center mb-5">
             <h1 class="display-5 fw-bold mb-3">Carga tus datos</h1>
         </div>
-
         <div class="col-6">
             <!-- Documento -->
             <div class="mb-3">

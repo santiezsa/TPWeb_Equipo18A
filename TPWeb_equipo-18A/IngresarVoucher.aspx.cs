@@ -37,8 +37,6 @@ namespace TPWeb_equipo_18A
             {
                 cvVoucherInvalido.IsValid = false;
             }
-
-
         }
 
         protected void cvVoucherInvalido_ServerValidate(object source, ServerValidateEventArgs args)

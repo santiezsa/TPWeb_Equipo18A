@@ -113,7 +113,7 @@ namespace negocio
                 datos.setearConsulta("UPDATE Vouchers SET FechaCanje = @FechaCanje, IdCliente = @IdCliente, IdArticulo = @IdArticulo WHERE CodigoVoucher = @CodigoVoucher");
                 datos.setearParametro("@FechaCanje", fechaCanje);
                 datos.setearParametro("@IdCliente", idCliente);
-                datos.setearParametro("IdArticulo", idArticulo);
+                datos.setearParametro("@IdArticulo", idArticulo);
                 datos.setearParametro("@CodigoVoucher", codigoVoucher);
                 datos.ejecutarAccion();
             }
