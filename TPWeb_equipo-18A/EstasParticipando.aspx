@@ -79,4 +79,10 @@
             setTimeout(() => fireworks.stop(), 5000);
         };
     </script>
+    <div class="text-center mt-4">
+    <a href="Default.aspx" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left me-2"></i>
+        Volver al inicio
+    </a>
+</div>
 </asp:Content>
